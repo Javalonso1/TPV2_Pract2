@@ -1,0 +1,88 @@
+﻿c:\software\programacion\MSVStudio2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
+  Manager.cpp
+  Game.cpp
+  JSON.cpp
+  JSONValue.cpp
+  json_demo.cpp
+  main.cpp
+  SDLUtils.cpp
+  sdlutils_demo.cpp
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+  (compilando archivo de origen "src/sdlutils/sdlutils_demo.cpp")
+  U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32):
+  el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(202,28):
+  	Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Music>" que se está compilando
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13):
+  	al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=Music
+          ]
+  		U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\sdlutils_demo.cpp(52,30):
+  		vea la primera referencia a “SDLUtils::map_access_wrapper<Music>::at” en “sdlutils_basic_demo”
+  
+  SoundEffect.cpp
+  Texture.cpp
+  CollisionsSystem.cpp
+  GameCtrlSystem.cpp
+  PacManSystem.cpp
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+  (compilando archivo de origen "src/systems/PacManSystem.cpp")
+  U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32):
+  el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30):
+  	Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13):
+  	al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=Texture
+          ]
+  		U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\PacManSystem.cpp(29,28):
+  		vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “PacManSystem::initSystem”
+  
+  RenderSystem.cpp
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\RenderSystem.cpp(60,19): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\RenderSystem.cpp(59,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+  (compilando archivo de origen "src/systems/RenderSystem.cpp")
+  U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32):
+  el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30):
+  	Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13):
+  	al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=Texture
+          ]
+  		U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\RenderSystem.cpp(65,41):
+  		vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “RenderSystem::drawMsgs”
+  
+  StarsSystem.cpp
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(76,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(76,21): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(76,43): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(76,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(86,30): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(87,36): warning C4244: '=': conversión de 'int' a 'float'; posible pérdida de datos
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+  (compilando archivo de origen "src/systems/StarsSystem.cpp")
+  U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32):
+  el contexto de creación de instancias de la plantilla (el más antiguo primero) es
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34):
+  	Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  	U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13):
+  	al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+  		U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp(102,49):
+  		vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “StarsSystem::onStarEaten”
+  
+  Collisions.cpp
+  Vector2D.cpp
+  Generando código...
+  TPV2.vcxproj -> U:\hlocal\GitHub\TPV2_Pract2\TPV2\bin\TPV2Debug.exe

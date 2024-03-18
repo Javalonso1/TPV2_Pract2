@@ -1,0 +1,17 @@
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\ecs\Manager.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\Manager.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\game\Game.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\Game.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\json\JSON.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\JSON.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\json\JSONValue.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\JSONValue.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\json\json_demo.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\json_demo.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\main.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\main.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SDLUtils.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\SDLUtils.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\sdlutils_demo.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\sdlutils_demo.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\SoundEffect.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\SoundEffect.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\sdlutils\Texture.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\Texture.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\CollisionsSystem.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\CollisionsSystem.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\GameCtrlSystem.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\GameCtrlSystem.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\PacManSystem.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\PacManSystem.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\RenderSystem.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\RenderSystem.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\systems\StarsSystem.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\StarsSystem.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\utils\Collisions.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\Collisions.obj
+U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\src\utils\Vector2D.cpp;U:\hlocal\GitHub\TPV2_Pract2\TPV2\TPV2\x64\Debug\Vector2D.obj
