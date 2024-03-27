@@ -16,6 +16,6 @@ public:
 	void initSystem() override;
 	void update() override;
 private:
-	Transform *pmTR_;
+	Transform *pmTR_;		
 };
 
