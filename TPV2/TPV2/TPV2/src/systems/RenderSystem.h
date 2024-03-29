@@ -15,8 +15,7 @@ public:
 	virtual ~RenderSystem();
 	void initSystem() override;
 	void update() override;
-private:
-	void drawStars();
+private:	
 	void drawPacMan();
 	void drawMsgs();
 	void draw(Transform *tr, Texture *tex);

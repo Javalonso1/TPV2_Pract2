@@ -5,6 +5,7 @@
 #include "../components/Image.h"
 #include "../components/ImageWithFrames.h"
 #include "../components/Transform.h"
+#include "../components/Health.h"
 #include "../ecs/Manager.h"
 #include "../sdlutils/macros.h"
 #include "../sdlutils/SDLUtils.h"
@@ -23,10 +24,10 @@ void RenderSystem::initSystem() {
 
 void RenderSystem::update() {
 	drawMsgs();
-	drawStars();
+	//drawStars();
 	drawPacMan();
 }
-
+/*
 void RenderSystem::drawStars() {
 	// draw stars
 	for (auto e : mngr_->getEntities(ecs::grp::STARS)) {
@@ -35,12 +36,13 @@ void RenderSystem::drawStars() {
 		auto tex = mngr_->getComponent<Image>(e)->tex_;
 		draw(tr, tex);
 	}
-}
+}*/
 
 void RenderSystem::drawPacMan() {
 	auto e = mngr_->getHandler(ecs::hdlr::PACMAN);
 	auto tr = mngr_->getComponent<Transform>(e);
 	mngr_->getComponent<ImageWithFrames>(e)->render();
+	mngr_->getComponent<Health>(e)->render();
 	//draw(tr, tex);
 
 }
@@ -63,7 +65,7 @@ void RenderSystem::drawMsgs() {
 	scoreTex.render(dest);
 
 	// draw add stars message
-	sdlutils().msgs().at("addstars").render(10, 10);
+	//sdlutils().msgs().at("addstars").render(10, 10);
 
 }
 

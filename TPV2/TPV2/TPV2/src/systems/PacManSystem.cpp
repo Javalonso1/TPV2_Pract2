@@ -5,6 +5,7 @@
 #include "../components/ImageWithFrames.h"
 #include "../components/Image.h"
 #include "../components/Transform.h"
+#include "../components/Health.h"
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
@@ -35,6 +36,7 @@ void PacManSystem::initSystem() {
 		128,128,
 		0,0,
 		1,4);
+	mngr_->addComponent<Health>(pacman, 3);
 }
 
 void PacManSystem::update() {

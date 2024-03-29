@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\Health.h" />
     <ClInclude Include="src\components\Image.h" />
     <ClInclude Include="src\components\ImageWithFrames.h" />
     <ClInclude Include="src\components\Points.h" />
@@ -58,7 +59,6 @@
     <ClInclude Include="src\systems\GameCtrlSystem.h" />
     <ClInclude Include="src\systems\PacManSystem.h" />
     <ClInclude Include="src\systems\RenderSystem.h" />
-    <ClInclude Include="src\systems\StarsSystem.h" />
     <ClInclude Include="src\utils\Collisions.h" />
     <ClInclude Include="src\utils\DynamicBitSet.h" />
     <ClInclude Include="src\utils\mpl.h" />
@@ -67,6 +67,7 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\Health.cpp" />
     <ClCompile Include="src\components\ImageWithFrames.cpp" />
     <ClCompile Include="src\ecs\Manager.cpp" />
     <ClCompile Include="src\game\Game.cpp" />
@@ -87,7 +88,6 @@
     <ClCompile Include="src\systems\GameCtrlSystem.cpp" />
     <ClCompile Include="src\systems\PacManSystem.cpp" />
     <ClCompile Include="src\systems\RenderSystem.cpp" />
-    <ClCompile Include="src\systems\StarsSystem.cpp" />
     <ClCompile Include="src\utils\Collisions.cpp" />
     <ClCompile Include="src\utils\Vector2D.cpp" />
   </ItemGroup>
