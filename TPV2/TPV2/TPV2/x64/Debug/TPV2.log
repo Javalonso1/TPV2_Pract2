@@ -1,15 +1,5 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  RenderSystem.cpp
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\ImageWithFrames.h(9,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\RenderSystem.h(7,8): message : vea la declaración de 'Transform'
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\RenderSystem.cpp(63,19): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\RenderSystem.cpp(62,18): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
-          with
-          [
-              T=Font
-          ]
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\RenderSystem.cpp(56,18): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Font>::at” en “RenderSystem::drawMsgs”
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(198,27): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Font>" que se está compilando
+  Game.cpp
+  main.cpp
+  Generando código...
   TPV2.vcxproj -> C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\bin\TPV2Debug.exe

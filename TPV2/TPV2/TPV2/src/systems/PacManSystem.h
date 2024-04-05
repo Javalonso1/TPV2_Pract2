@@ -15,6 +15,7 @@ public:
 	virtual ~PacManSystem();
 	void initSystem() override;
 	void update() override;
+	Transform* getTransform() { return pmTR_; }
 private:
 	Transform *pmTR_;		
 };

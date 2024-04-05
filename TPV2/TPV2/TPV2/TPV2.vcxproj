@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\systems\GhostSystem.h" />
     <ClInclude Include="src\components\Health.h" />
     <ClInclude Include="src\components\Image.h" />
     <ClInclude Include="src\components\ImageWithFrames.h" />
@@ -67,6 +68,7 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\systems\GhostSystem.cpp" />
     <ClCompile Include="src\components\Health.cpp" />
     <ClCompile Include="src\components\ImageWithFrames.cpp" />
     <ClCompile Include="src\ecs\Manager.cpp" />

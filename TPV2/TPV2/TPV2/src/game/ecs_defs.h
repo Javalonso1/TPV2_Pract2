@@ -27,6 +27,7 @@
 #define _SYS_LIST_ \
     STARS, \
 	PACMAN, \
+	GHOST, \
 	RENDER, \
 	GAMECTRL, \
 	COLLISIONS
