@@ -11,6 +11,7 @@ class InputHandler;
 class PacManSystem;
 class GameCtrlSystem;
 class CollisionsSystem;
+class GhostSystem;
 class RenderSystem;
 
 class Game : public Singleton<Game> {
@@ -68,6 +69,7 @@ private:
 	ecs::System *startsSys_;
 	RenderSystem *renderSys_;
 	CollisionsSystem *collisionSys_;
+	GhostSystem *ghostSys_;
 	
 	GameState* current_state_;
 	GameState* paused_state_;

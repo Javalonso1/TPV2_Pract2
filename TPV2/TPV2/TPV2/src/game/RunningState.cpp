@@ -10,18 +10,21 @@
 #include "../systems/PacManSystem.h"
 #include "../systems/CollisionsSystem.h"
 #include "../systems/GameCtrlSystem.h"
+#include "../systems/GhostSystem.h"
 #include "../systems/RenderSystem.h"
 
 
 #include "Game.h"
 
-RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, GameCtrlSystem* gamectrl_sys) :
+RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys) :
 	ihdlr(ih()), //
 	pac_sys_(pac_sys),
 	render_sys_(render_sys),
 	colision_sys_(col_sys),
-	gameCtrl_sys_(gamectrl_sys)
+	gameCtrl_sys_(gamectrl_sys),
+	ghost_sys_(ghost_sys)	
 {
+	ghost_sys_->addGhost();
 }
 
 RunningState::~RunningState() {
@@ -48,6 +51,7 @@ void RunningState::update() {
 
 	// update
 	pac_sys_->update();
+	ghost_sys_->update();
 	gameCtrl_sys_->update();
 
 	// check collisions
@@ -57,6 +61,13 @@ void RunningState::update() {
 	sdlutils().clearRenderer();
 	render_sys_->update();
 	sdlutils().presentRenderer();
+
+	/*
+	//Ghosts
+	if (sdlutils().virtualTimer().currTime() > lastTimeGeneratedGhost_ + 5000) {
+		//ast_mngr_->create_asteroids(1);
+		lastTimeGeneratedGhost_ = sdlutils().virtualTimer().currTime();
+	}*/
 }
 
 void RunningState::enter() {

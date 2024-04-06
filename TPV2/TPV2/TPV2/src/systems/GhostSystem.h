@@ -3,7 +3,7 @@
 #include "../ecs/System.h"
 #include "../utils/Vector2D.h"
 
-struct Transform;
+class Transform;
 
 class GhostSystem : public ecs::System
 {
@@ -11,12 +11,15 @@ public:
 
 	__SYSID_DECL__(ecs::sys::GHOST)
 
-		GhostSystem(Transform*);
+	GhostSystem(Transform*);
 	virtual ~GhostSystem();
 	void initSystem() override;
 	void update() override;
-private:
-	Transform* gTR_;
-	Transform* pmTR_;	
+	void addGhost();
+	/*void onStarEaten(ecs::entity_t e);
+	void recieve(const Message& m) override;*/
+private:	
+	Transform* pmTR_;
+	int numGhosts;
+	int maxGhosts;
 };
-

@@ -9,12 +9,13 @@ class InputHandler;
 
 class PacManSystem;
 class RenderSystem;
+class GhostSystem;
 class CollisionsSystem;
 class GameCtrlSystem;
 
 class RunningState: public GameState {
 public:
-	RunningState(PacManSystem *pac_sys, RenderSystem* render_sys, CollisionsSystem* colision_sys, GameCtrlSystem* gamectrl_sys);
+	RunningState(PacManSystem *pac_sys, RenderSystem* render_sys, CollisionsSystem* colision_sys, GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys);
 	virtual ~RunningState();
 	void leave() override;
 	void update() override;
@@ -29,7 +30,8 @@ private:
 	PacManSystem* pac_sys_;
 	RenderSystem* render_sys_;
 	CollisionsSystem* colision_sys_;
-	GameCtrlSystem* gameCtrl_sys_;
+	GameCtrlSystem* gameCtrl_sys_;	
+	GhostSystem* ghost_sys_;	
 
 	bool mute_;
 };

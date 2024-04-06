@@ -55,10 +55,11 @@ void Game::init() {
 	pacmanSys_ = mngr_->addSystem<PacManSystem>();		
 	gameCtrlSys_ = mngr_->addSystem<GameCtrlSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
-	collisionSys_ = mngr_->addSystem<CollisionsSystem>();	
+	collisionSys_ = mngr_->addSystem<CollisionsSystem>();
+	ghostSys_ = mngr_->addSystem<GhostSystem>(pacmanSys_->getTransform());
 
 	paused_state_ = new PausedState();
-	runing_state_ = new RunningState(pacmanSys_, renderSys_, collisionSys_, gameCtrlSys_);
+	runing_state_ = new RunningState(pacmanSys_, renderSys_, collisionSys_, gameCtrlSys_, ghostSys_);
 	newgame_state_ = new NewGameState(pacmanSys_);
 	newround_state_ = new NewRoundState(pacmanSys_);
 	gameover_state_ = new GameOverState();
