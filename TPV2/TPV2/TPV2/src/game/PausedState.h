@@ -1,5 +1,5 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
-/*
+
 #pragma once
 #include <SDL_rect.h>
 
@@ -23,4 +23,4 @@ private:
 	InputHandler &ihdlr;
 	bool mute_;
 };
-*/
+

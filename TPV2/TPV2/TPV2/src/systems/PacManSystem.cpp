@@ -26,10 +26,7 @@ void PacManSystem::initSystem() {
 	mngr_->setHandler(ecs::hdlr::PACMAN, pacman);
 
 	pmTR_ = mngr_->addComponent<Transform>(pacman);
-	auto s = 50.0f;
-	auto x = (sdlutils().width() - s) / 2.0f;
-	auto y = (sdlutils().height() - s) / 2.0f;
-	pmTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
+	reset_pacman();
 	mngr_->addComponent<ImageWithFrames>(pacman, &sdlutils().images().at("pacman"),
 		8, 8, 
 		0,0 , 
@@ -37,6 +34,13 @@ void PacManSystem::initSystem() {
 		0,0,
 		1,4);
 	mngr_->addComponent<Health>(pacman, 3);
+}
+
+void PacManSystem::reset_pacman() {
+	auto s = 50.0f;
+	auto x = (sdlutils().width() - s) / 2.0f;
+	auto y = (sdlutils().height() - s) / 2.0f;
+	pmTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
 }
 
 void PacManSystem::update() {

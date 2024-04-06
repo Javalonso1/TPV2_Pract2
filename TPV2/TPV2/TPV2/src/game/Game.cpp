@@ -12,6 +12,11 @@
 #include "../systems/GhostSystem.h"
 #include "../utils/Vector2D.h"
 #include "../utils/Collisions.h"
+#include "GameOverState.h"
+#include "NewGameState.h"
+#include "NewRoundState.h"
+#include "PausedState.h"
+#include "RunningState.h"
 
 using ecs::Manager;
 
@@ -21,7 +26,15 @@ Game::Game() :
 		gameCtrlSys_(), //
 		startsSys_(), //
 		renderSys_(), //
-		collisionSys_() {
+		collisionSys_(),
+		ihdlr(ih()),
+		current_state_(nullptr), //
+		paused_state_(nullptr), //
+		runing_state_(nullptr), //
+		newgame_state_(nullptr), //
+		newround_state_(nullptr), //
+		gameover_state_(nullptr)
+{
 
 }
 
@@ -43,6 +56,14 @@ void Game::init() {
 	gameCtrlSys_ = mngr_->addSystem<GameCtrlSystem>();
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 	collisionSys_ = mngr_->addSystem<CollisionsSystem>();	
+
+	paused_state_ = new PausedState();
+	runing_state_ = new RunningState(pacmanSys_, renderSys_, collisionSys_, gameCtrlSys_);
+	newgame_state_ = new NewGameState(pacmanSys_);
+	newround_state_ = new NewRoundState(pacmanSys_);
+	gameover_state_ = new GameOverState();
+
+	current_state_ = newgame_state_;
 }
 
 void Game::start() {
@@ -63,16 +84,19 @@ void Game::start() {
 			continue;
 		}
 
-
+		/*
 		pacmanSys_->update();			
 		gameCtrlSys_->update();
 		collisionSys_->update();
+		*/ 
+
+		current_state_->update();
 
 		mngr_->refresh();
 
-		sdlutils().clearRenderer();
-		renderSys_->update();
-		sdlutils().presentRenderer();
+		/*sdlutils().clearRenderer();
+		//renderSys_->update();
+		sdlutils().presentRenderer();*/
 
 		Uint32 frameTime = sdlutils().currRealTime() - startTime;
 

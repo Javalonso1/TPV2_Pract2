@@ -13,8 +13,13 @@ public:
 
 	PacManSystem();
 	virtual ~PacManSystem();
+
 	void initSystem() override;
+	void reset_pacman();
+
 	void update() override;
+	//void recieve(const Message&) override;
+
 	Transform* getTransform() { return pmTR_; }
 private:
 	Transform *pmTR_;		

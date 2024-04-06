@@ -17,7 +17,17 @@
   "messages" : [
     { "id" : "PressAnyKey", "text" : "Press Any Key", "font" : "ARIAL24", "color" : "0x112233ff", "bg" : "0xffffffff" },
     { "id" : "HelloSDL", "text" : "Hello SDL!", "font" : "ARIAL48", "color" : "0x0000ffff" },
-    { "id" : "addstars", "text" : "Press SPACE to add stars to eat!", "font" : "ARIAL16", "color" : "0x00ff00ff" }
+    {
+      "id": "addstars",
+      "text": "Press SPACE to add stars to eat!",
+      "font": "ARIAL16",
+      "color": "0x00ff00ff"
+    },
+    { "id" : "newgame", "text" : "Press any key to start a new game.", "font" : "ARIAL24", "color" : "0x0000ffff" },
+    { "id" : "newround", "text" : "Press ENTER to start the round.", "font" : "ARIAL24", "color" : "0x0000ffff" },
+    { "id" : "gameover_lost", "text" : "Game Over Loser! Press ENTER to continue.", "font" : "ARIAL24", "color" : "0x0000ffff" },
+    { "id" : "gameover_won", "text" : "Game Over Champion! Press ENTER to continue.", "font" : "ARIAL24", "color" : "0x0000ffff" },
+    { "id" : "paused", "text" : "Paused! Press any key to resume.", "font" : "ARIAL24", "color" : "0x0000ffff" }
   ],
   
   "sounds" : [

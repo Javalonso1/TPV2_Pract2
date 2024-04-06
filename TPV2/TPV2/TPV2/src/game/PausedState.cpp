@@ -1,5 +1,5 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
-/*
+
 #include "PausedState.h"
 
 #include "../sdlutils/InputHandler.h"
@@ -29,25 +29,28 @@ void PausedState::update() {
 	if (ihdlr.keyDownEvent()) {
 		Game::instance()->setState(Game::RUNNING, mute_);
 	}
+	
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {
+			/*
 			sdlutils().soundEffects().at("explosion").setVolume(0);
 			sdlutils().soundEffects().at("fire").setVolume(0);
 			sdlutils().soundEffects().at("gunshot").setVolume(0);
-			sdlutils().soundEffects().at("thrust").setVolume(0);
+			sdlutils().soundEffects().at("thrust").setVolume(0);*/
 			mute_ = true;
 		}
 		else {
+			/*
 			sdlutils().soundEffects().at("fire").setVolume(10);
 			sdlutils().soundEffects().at("gunshot").setVolume(10);
 			sdlutils().soundEffects().at("explosion").setVolume(10);
-			sdlutils().soundEffects().at("thrust").setVolume(10);
+			sdlutils().soundEffects().at("thrust").setVolume(10);*/
 			mute_ = false;
 		}
 	}
+	
 	sdlutils().clearRenderer();
 	msg_.render(dest_);
 	sdlutils().presentRenderer();
 }
 
-*/

@@ -1,28 +1,27 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
-/*
+
 #include "RunningState.h"
 
-#include "../components/Gun.h"
 #include "../components/Transform.h"
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 #include "../utils/Collisions.h"
-#include "AsteroidsFacade.h"
-#include "FighterFacade.h"
-#include "MisilFacade.h"
-#include "BlackHoleUtils.h"
+#include "../systems/PacManSystem.h"
+#include "../systems/CollisionsSystem.h"
+#include "../systems/GameCtrlSystem.h"
+#include "../systems/RenderSystem.h"
+
 
 #include "Game.h"
 
-RunningState::RunningState(AsteroidsFacade *ast_mngr,
-		FighterFacade *fighter_mngr, MisilFacade* misil_manager) :
-		ihdlr(ih()), //
-		ast_mngr_(ast_mngr), //
-		fighter_mngr_(fighter_mngr), //
-		misl_mngr_(misil_manager),
-		lastTimeGeneratedAsteroids_(), 
-		lastTimeGeneratedMissile_(){
+RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, GameCtrlSystem* gamectrl_sys) :
+	ihdlr(ih()), //
+	pac_sys_(pac_sys),
+	render_sys_(render_sys),
+	colision_sys_(col_sys),
+	gameCtrl_sys_(gamectrl_sys)
+{
 }
 
 RunningState::~RunningState() {
@@ -35,8 +34,8 @@ void RunningState::update() {
 
 	auto mngr = Game::instance()->getMngr();
 
-	// check if fighter won
-	if (mngr->getEntities(ecs::grp::ASTEROIDS).size() == 0) {
+	// check if pacman won
+	if (true == false) {
 		Game::instance()->setState(Game::GAMEOVER, mute_);
 		return;
 	}
@@ -47,56 +46,22 @@ void RunningState::update() {
 		return;
 	}
 
-	auto fighter = mngr->getHandler(ecs::hdlr::FIGHTER);
-	auto &asteroids = mngr->getEntities(ecs::grp::ASTEROIDS);
-	auto &blackHoles = mngr->getEntities(ecs::grp::BLACK_HOLE);
-	auto& misiles = mngr->getEntities(ecs::grp::MISILE);
-
 	// update
-	mngr->update(fighter);
-	for (auto a : asteroids) {
-		mngr->update(a);
-	}
-	for (auto a : blackHoles) {
-		mngr->update(a);		
-	}
-	for (auto a : misiles) {
-		mngr->update(a);
-	}
+	pac_sys_->update();
+	gameCtrl_sys_->update();
 
 	// check collisions
-	checkCollisions();
+	colision_sys_->update();
 
 	// render
 	sdlutils().clearRenderer();
-	for (auto a : asteroids) {
-		mngr->render(a);
-	}
-	for (auto a : blackHoles) {
-		mngr->render(a);
-	}
-	for (auto a : misiles) {
-		mngr->render(a);
-	}
-	mngr->render(fighter);
+	render_sys_->update();
 	sdlutils().presentRenderer();
-
-	mngr->refresh();
-
-	if (sdlutils().virtualTimer().currTime() > lastTimeGeneratedAsteroids_ + 10000) {
-		ast_mngr_->create_asteroids(1);
-		lastTimeGeneratedAsteroids_ = sdlutils().virtualTimer().currTime();
-	}
-	if (sdlutils().virtualTimer().currTime() > lastTimeGeneratedMissile_ + 15000) {
-		misl_mngr_->create_misile();
-		lastTimeGeneratedMissile_ = sdlutils().virtualTimer().currTime();
-	}
 }
 
 void RunningState::enter() {
-	lastTimeGeneratedAsteroids_ = sdlutils().virtualTimer().currTime();
-}
-
+	
+}/*
 void RunningState::checkCollisions() {
 	auto mngr = Game::instance()->getMngr();
 	auto fighter = mngr->getHandler(ecs::hdlr::FIGHTER);
@@ -247,13 +212,12 @@ void RunningState::checkCollisions() {
 		}
 	}
 	
-}
+}*/
 
-void RunningState::onFigherDeath() {
+/*void RunningState::onFigherDeath() {
 	sdlutils().soundEffects().at("explosion").play();
 	if (fighter_mngr_->update_lives(-1) > 0)
 		Game::instance()->setState(Game::NEWROUND, mute_);
 	else
 		Game::instance()->setState(Game::GAMEOVER, mute_);
-}
-*/
+}*/

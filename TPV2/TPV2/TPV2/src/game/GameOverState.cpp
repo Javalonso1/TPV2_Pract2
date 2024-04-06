@@ -1,5 +1,5 @@
 // This file is part of the course TPV2@UCM - Samir Genaim
-/*
+
 #include "GameOverState.h"
 
 #include "../ecs/Manager.h"
@@ -44,13 +44,12 @@ void GameOverState::update() {
 
 void GameOverState::enter() {
 	auto mngr = Game::instance()->getMngr();
-	if (mngr->getEntities(ecs::grp::ASTEROIDS).size() > 0) {
+	/*if (mngr->getEntities(ecs::grp::ASTEROIDS).size() > 0) {
 		msg_ = &sdlutils().msgs().at("gameover_lost");
-	} else {
+	} else {*/
 		msg_ = &sdlutils().msgs().at("gameover_won");
-	}
+	//}
 	float x = (sdlutils().width() - msg_->width()) / 2;
 	float y = (sdlutils().height() - msg_->height()) / 2;
 	dest_ = build_sdlrect(x, y, msg_->width(), msg_->height());
 }
-*/
