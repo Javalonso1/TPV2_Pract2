@@ -14,6 +14,8 @@ Health::Health() :
 Health::Health(int l) :
 		lives_(l), img_(sdlutils().images().at("heart")) {
 	assert(lives_>=0);
+	std::cout << "existo";
+	std::cout << lives_;
 }
 
 Health::~Health() {

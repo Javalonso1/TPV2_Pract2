@@ -18,6 +18,7 @@ public:
 	void leave() override;
 	void update() override;
 	void setMute(bool m) { mute_ = m; }
+	bool getMute() { return mute_; };
 
 private:
 	Texture &msg_;

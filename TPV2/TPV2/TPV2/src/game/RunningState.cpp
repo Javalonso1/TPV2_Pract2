@@ -39,13 +39,13 @@ void RunningState::update() {
 
 	// check if pacman won
 	if (true == false) {
-		Game::instance()->setState(Game::GAMEOVER, mute_);
+		Game::instance()->setState(Game::GAMEOVER);
 		return;
 	}
 
 	// move to pause if P pressed
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_P)) {
-		Game::instance()->setState(Game::PAUSED, mute_);
+		Game::instance()->setState(Game::PAUSED);
 		return;
 	}
 
@@ -225,10 +225,3 @@ void RunningState::checkCollisions() {
 	
 }*/
 
-/*void RunningState::onFigherDeath() {
-	sdlutils().soundEffects().at("explosion").play();
-	if (fighter_mngr_->update_lives(-1) > 0)
-		Game::instance()->setState(Game::NEWROUND, mute_);
-	else
-		Game::instance()->setState(Game::GAMEOVER, mute_);
-}*/

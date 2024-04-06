@@ -21,9 +21,10 @@ public:
 	void update() override;
 	void enter() override;
 	void setMute(bool m) { mute_ = m; }
+	bool getMute() { return mute_; };
 private:
 	//void checkCollisions();
-	//void onFigherDeath();
+	void onPacDeath();
 
 	InputHandler &ihdlr;
 

@@ -16,6 +16,7 @@ public:
 	void update() override;
 	void enter() override;
 	void setMute(bool m) { mute_ = m; }
+	bool getMute() { return mute_; };
 private:
 	Texture *msg_;
 	SDL_Rect dest_;

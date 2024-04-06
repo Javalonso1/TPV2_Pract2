@@ -19,7 +19,7 @@ void GameOverState::leave() {
 
 void GameOverState::update() {
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_RETURN)) {
-		Game::instance()->setState(Game::NEWGAME, mute_);
+		Game::instance()->setState(Game::NEWGAME);
 	}
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {

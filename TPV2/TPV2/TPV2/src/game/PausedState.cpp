@@ -27,7 +27,7 @@ void PausedState::leave() {
 
 void PausedState::update() {
 	if (ihdlr.keyDownEvent()) {
-		Game::instance()->setState(Game::RUNNING, mute_);
+		Game::instance()->setState(Game::RUNNING);
 	}
 	
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {

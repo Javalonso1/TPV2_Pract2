@@ -63,6 +63,34 @@ void GhostSystem::addGhost() {
 	//Inicializar el vector
 	gTR_->vel_ = (pmTR_->getPos() - gTR_->getPos()).normalize() * 1.1f;
 }
+
+void GhostSystem::recieve(const Message& m)
+{
+	switch (m.id) {
+	case _ROUND_START:
+		//Borrar fantasmas en pantalla, instanciar uno nuevo
+		break;
+	case _IMMUNITY_START:
+		inmunity_ = true;
+		break;
+	case _IMMUNITY_END:
+		inmunity_ = false;
+		break;
+	case _PACMAN_GHOST_COLLISION:
+		if (inmunity_) {
+
+		}
+		else {
+			Message m;
+			m.id = _ROUND_OVER;
+			mngr_->send(m);
+		}
+		break;
+	default:
+		break;
+	}
+}
+
 void GhostSystem::update() {
 	auto& rand_ = sdlutils().rand();
 

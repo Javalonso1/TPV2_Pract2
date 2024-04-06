@@ -16,10 +16,10 @@ public:
 	void initSystem() override;
 	void update() override;
 	void addGhost();
-	/*void onStarEaten(ecs::entity_t e);
-	void recieve(const Message& m) override;*/
+	void recieve(const Message& m) override;
 private:	
 	Transform* pmTR_;
 	int numGhosts;
 	int maxGhosts;
+	bool inmunity_;
 };

@@ -5,6 +5,7 @@
 #include "../ecs/System.h"
 
 struct Transform;
+class Health;
 
 class PacManSystem: public ecs::System {
 public:
@@ -18,10 +19,13 @@ public:
 	void reset_pacman();
 
 	void update() override;
-	//void recieve(const Message&) override;
+	void recieve(const Message&) override;
 
 	Transform* getTransform() { return pmTR_; }
+	int update_lives(int);
+	void reset_lives();
 private:
-	Transform *pmTR_;		
+	Transform *pmTR_;	
+	Health* pmHL_;
 };
 

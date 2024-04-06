@@ -9,8 +9,10 @@
 #include "../ecs/Manager.h"
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
+#include "../game/Game.h"
 
-const float SPEED_ = -2.5f;
+const float SPEED = -2.5f;
+const int MAX_LIVES = 3;
 
 PacManSystem::PacManSystem() :
 		pmTR_(nullptr) {
@@ -21,7 +23,6 @@ PacManSystem::~PacManSystem() {
 
 void PacManSystem::initSystem() {
 	// create the PacMan entity
-	//
 	auto pacman = mngr_->addEntity();
 	mngr_->setHandler(ecs::hdlr::PACMAN, pacman);
 
@@ -33,7 +34,7 @@ void PacManSystem::initSystem() {
 		128,128,
 		0,0,
 		1,4);
-	mngr_->addComponent<Health>(pacman, 3);
+	pmHL_ = mngr_->addComponent<Health>(pacman, MAX_LIVES);
 }
 
 void PacManSystem::reset_pacman() {
@@ -59,7 +60,7 @@ void PacManSystem::update() {
 			pmTR_->vel_ = pmTR_->vel_.rotate(-90.0f);
 		} else if (ihldr.isKeyDown(SDL_SCANCODE_UP)) { // increase speed
 			
-			pmTR_->vel_ = Vector2D(0.0f, SPEED_).rotate(pmTR_->rot_);
+			pmTR_->vel_ = Vector2D(0.0f, SPEED).rotate(pmTR_->rot_);
 
 		} else if (ihldr.isKeyDown(SDL_SCANCODE_DOWN)) { // decrease speed
 			
@@ -90,4 +91,26 @@ void PacManSystem::update() {
 		pmTR_->vel_.set(0.0f, 0.0f);
 	}
 
+}
+
+void PacManSystem::recieve(const Message& m) {
+	switch (m.id) {
+	case _ROUND_OVER:
+		if (pmHL_->update_lives(-1) > 0)
+			Game::instance()->setState(Game::NEWROUND);
+		else
+			Game::instance()->setState(Game::GAMEOVER);
+		break;
+	default:
+		break;
+	}
+}
+
+int PacManSystem::update_lives(int mod) {
+	return pmHL_->update_lives(mod);
+}
+
+void PacManSystem::reset_lives()
+{
+	pmHL_->set_lives(MAX_LIVES);
 }

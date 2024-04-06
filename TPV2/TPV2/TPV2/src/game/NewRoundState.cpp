@@ -28,7 +28,7 @@ void NewRoundState::update() {
 		pac_sys_->reset_pacman();
 		//TO DO
 
-		Game::instance()->setState(Game::RUNNING, mute_);
+		Game::instance()->setState(Game::RUNNING);
 	}
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {

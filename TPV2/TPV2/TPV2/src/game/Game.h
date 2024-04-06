@@ -30,35 +30,32 @@ public:
 		return mngr_;
 	}
 
-	inline void setState(State s, bool m) {
+	inline void setState(State s) {
 		GameState *new_state = nullptr;
 		switch (s) {
 		case RUNNING:
 			new_state = runing_state_;
-			runing_state_->setMute(m);
 			break;
 		case PAUSED:
 			new_state = paused_state_;
-			paused_state_->setMute(m);
 			break;
 		case NEWGAME:
 			new_state = newgame_state_;
-			newgame_state_->setMute(m);
 			break;
 		case NEWROUND:
 			new_state = newround_state_;
-			newround_state_->setMute(m);
 			break;
 		case GAMEOVER:
 			new_state = gameover_state_;
-			gameover_state_->setMute(m);
 			break;
 		default:
 			break;
 		}
+		bool m = current_state_->getMute();
 		current_state_->leave();
 		current_state_ = new_state;
 		current_state_->enter();
+		current_state_->setMute(m);
 	}
 private:
 	ecs::Manager *mngr_;
