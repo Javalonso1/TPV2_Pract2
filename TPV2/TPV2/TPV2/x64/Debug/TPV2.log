@@ -1,17 +1,14 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  Game.cpp
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.h(6,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\RenderSystem.h(7,8): message : vea la declaración de 'Transform'
-  PacManSystem.cpp
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\ImageWithFrames.h(9,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\PacManSystem.h(7,8): message : vea la declaración de 'Transform'
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+  GhostSystem.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,17): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,8): message : vea la declaración de 'Transform'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.cpp(164,15): warning C4018: '>': no coinciden signed/unsigned
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
           with
           [
               T=Texture
           ]
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\PacManSystem.cpp(31,38): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “PacManSystem::initSystem”
-C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
-  Generando código...
-  TPV2.vcxproj -> C:\Users\Javier\Javier\00. Uni\Curso 2\TPV\Nueva carpeta\TPV2_Pract2\TPV2\TPV2\bin\TPV2Debug.exe
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.cpp(67,11): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “GhostSystem::addGhost”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+  TPV2.vcxproj -> C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\bin\TPV2Debug.exe

@@ -8,9 +8,10 @@
 #include "../sdlutils/InputHandler.h"
 #include "../sdlutils/SDLUtils.h"
 
-const float SPEED_ = -2.5f;
+const float SPEED_ = -1.5f;
 const int TIME_GHOST_GENERATION_ = 5000;
 const int MAX_GHOSTS_ = 10;
+const int TURN_CHANCE = 501;
 
 GhostSystem::GhostSystem(Transform* pm) :
 	pmTR_(pm), numGhosts(0), maxGhosts(MAX_GHOSTS_), timeGeneratingGhosts(sdlutils().currRealTime()){
@@ -30,7 +31,7 @@ void GhostSystem::resetGhosts() {
 	}
 }
 void GhostSystem::addGhost() {
-	if (numGhosts < maxGhosts) {
+	if (numGhosts < maxGhosts && !inmunity_) {
 		// Always use the random number generator provided by SDLUtils	
 		auto& rand_ = sdlutils().rand();
 		// create the ghost entity		
@@ -60,16 +61,15 @@ void GhostSystem::addGhost() {
 		auto x = x_ - s;
 		auto y = y_ - s;
 
+		auto color = rand_.nextInt(4, 9);
+
 		gTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
 		auto im = mngr_->addComponent<ImageWithFrames>(ghost, &sdlutils().images().at("pacman"),
 			8, 8,
 			0, 0,
 			128, 128,
-			4, 1,
+			color, 1,
 			1, 7);
-		if (inmunity_) {
-			im->changeFrame(3, 5);
-		}
 		//Inicializar el vector
 		gTR_->vel_ = (pmTR_->getPos() - gTR_->getPos()).normalize() * 1.1f;
 
@@ -89,6 +89,8 @@ void GhostSystem::changeFrameAllGhosts(int a, int b) {
 }
 void GhostSystem::recieve(const Message& m)
 {	
+	auto& rand_ = sdlutils().rand();
+	auto color = rand_.nextInt(4, 9);
 	switch (m.id) {
 	case _ROUND_START:		
 		resetGhosts();
@@ -100,7 +102,7 @@ void GhostSystem::recieve(const Message& m)
 		break;
 	case _IMMUNITY_END:
 		inmunity_ = false;
-		changeFrameAllGhosts(4, 1);
+		changeFrameAllGhosts(color, 1);
 		break;
 	case _PACMAN_GHOST_COLLISION:
 		if (inmunity_) {
@@ -131,7 +133,7 @@ void GhostSystem::update() {
 		gTR_->pos_ = gTR_->pos_ + gTR_->vel_;
 		
 		//check if change direction with 0.005 of prob
-		int a = rand_.nextInt(0, 1001);
+		int a = rand_.nextInt(0, TURN_CHANCE);
 		if (a <= 5) {
 			if (inmunity_) gTR_->vel_ = (pmTR_->getPos() - gTR_->getPos()).normalize() * -1.1f;
 			else gTR_->vel_ = (pmTR_->getPos() - gTR_->getPos()).normalize() * 1.1f;
