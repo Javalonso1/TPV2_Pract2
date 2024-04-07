@@ -1,14 +1,82 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8004: El directorio Output no termina con una barra diagonal final. Esta instancia de compilación agregará la barra diagonal porque es necesaria para que se pueda evaluar correctamente el directorio Output.
-  GhostSystem.cpp
-C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,17): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
-C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,8): message : vea la declaración de 'Transform'
-C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.cpp(164,15): warning C4018: '>': no coinciden signed/unsigned
+  GameOverState.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\GameOverState.cpp(55,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\GameOverState.cpp(56,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\GameOverState.cpp(57,57): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\GameOverState.cpp(57,41): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
 C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
 C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
           with
           [
-              T=Texture
+              T=SoundEffect
           ]
-C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.cpp(67,11): message : vea la primera referencia a “SDLUtils::map_access_wrapper<Texture>::at” en “GhostSystem::addGhost”
-C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(199,30): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<Texture>" que se está compilando
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\GameOverState.cpp(27,58): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “GameOverState::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  NewGameState.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewGameState.cpp(15,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewGameState.cpp(16,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewGameState.cpp(17,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewGameState.cpp(17,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewGameState.cpp(35,58): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “NewGameState::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  NewRoundState.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewRoundState.cpp(14,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewRoundState.cpp(15,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewRoundState.cpp(16,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewRoundState.cpp(16,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\NewRoundState.cpp(34,58): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “NewRoundState::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  PausedState.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\PausedState.cpp(12,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\PausedState.cpp(13,10): warning C4244: 'inicializando': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\PausedState.cpp(14,55): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\PausedState.cpp(14,40): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\PausedState.cpp(35,58): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “PausedState::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  RunningState.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\GhostSystem.h(6,16): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'struct' ahora se ve usando 'class'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\PacManSystem.h(7,8): message : vea la declaración de 'Transform'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\game\RunningState.cpp(44,58): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “RunningState::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  FoodSystem.cpp
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,17): warning C4099: 'Transform': nombre de tipo visto anteriormente usando 'class' ahora se ve usando 'struct'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\components\Transform.h(8,8): message : vea la declaración de 'Transform'
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\FoodSystem.cpp(51,28): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\FoodSystem.cpp(51,24): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\FoodSystem.cpp(51,48): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\FoodSystem.cpp(51,45): warning C4244: 'argumento': conversión de 'int' a 'float'; posible pérdida de datos
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(51,32): warning C4101: 'e': variable local sin referencia
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(48,13): message : al compilar la función del miembro clase plantilla "T &SDLUtils::map_access_wrapper<T>::at(const std::string &)"
+          with
+          [
+              T=SoundEffect
+          ]
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\systems\FoodSystem.cpp(99,50): message : vea la primera referencia a “SDLUtils::map_access_wrapper<SoundEffect>::at” en “FoodSystem::update”
+C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\TPV2\src\sdlutils\SDLUtils.h(201,34): message : Vea la referencia a la creación de una instancia de clase plantilla "SDLUtils::map_access_wrapper<SoundEffect>" que se está compilando
+  Generando código...
+  LINK : no se encontró C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\bin\TPV2Debug.exe o no lo generó el último vínculo incremental; ejecutando vínculo completo
   TPV2.vcxproj -> C:\Users\Pablo\Documents\UNIVERSIDAD\2º\TPV2\TPV2_Pract2\TPV2\TPV2\bin\TPV2Debug.exe

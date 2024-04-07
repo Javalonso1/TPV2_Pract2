@@ -23,7 +23,6 @@ void FoodSystem::initSystem() {
 
 }
 void FoodSystem::resetFruit() {
-	numFruts = 0;
 	auto fruits = mngr_->getEntities(ecs::grp::FRUIT);
 	for (int i = 0; i < fruits.size(); i++) {
 		removeFruit(fruits[i]);
@@ -97,6 +96,7 @@ void FoodSystem::update() {
 		fru->update();
 	}
 	if (numFruts <= 0) {
+		sdlutils().soundEffects().at("pacman_won").play();
 		Message m;
 		m.id = _ROUND_OVER;
 		mngr_->send(m);

@@ -6,6 +6,7 @@
 #include "../components/Fruit.h"
 #include "../ecs/Manager.h"
 #include "../utils/Collisions.h"
+#include "../sdlutils/SDLUtils.h"
 
 CollisionsSystem::CollisionsSystem() {
 	// TODO Auto-generated constructor stub
@@ -44,6 +45,7 @@ void CollisionsSystem::update() {
 				pTR->pos_, pTR->width_, pTR->height_, //
 				fTR->pos_, fTR->width_, fTR->height_)) {
 
+				sdlutils().soundEffects().at("pacman_eat").play();
 				Message m;
 				m.id = _PACMAN_FOOD_COLLISION;
 				m.fruit_data.e = e;

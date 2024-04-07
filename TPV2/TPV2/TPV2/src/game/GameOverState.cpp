@@ -24,17 +24,19 @@ void GameOverState::update() {
 	}
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {
-			sdlutils().soundEffects().at("explosion").setVolume(0);
-			sdlutils().soundEffects().at("fire").setVolume(0);
-			sdlutils().soundEffects().at("gunshot").setVolume(0);
-			sdlutils().soundEffects().at("thrust").setVolume(0);
+			sdlutils().soundEffects().at("pacman_chomp").setVolume(0);
+			sdlutils().soundEffects().at("pacman_death").setVolume(0);
+			sdlutils().soundEffects().at("pacman_eat").setVolume(0);
+			sdlutils().soundEffects().at("pacman_intro").setVolume(0);
+			sdlutils().soundEffects().at("pacman_won").setVolume(0);
 			mute_ = true;
 		}
 		else {
-			sdlutils().soundEffects().at("fire").setVolume(10);
-			sdlutils().soundEffects().at("gunshot").setVolume(10);
-			sdlutils().soundEffects().at("explosion").setVolume(10);
-			sdlutils().soundEffects().at("thrust").setVolume(10);
+			sdlutils().soundEffects().at("pacman_chomp").setVolume(10);
+			sdlutils().soundEffects().at("pacman_death").setVolume(10);
+			sdlutils().soundEffects().at("pacman_eat").setVolume(10);
+			sdlutils().soundEffects().at("pacman_intro").setVolume(10);
+			sdlutils().soundEffects().at("pacman_won").setVolume(10);
 			mute_ = false;
 		}
 	}

@@ -107,12 +107,13 @@ void GhostSystem::recieve(const Message& m)
 	case _PACMAN_GHOST_COLLISION:
 		if (inmunity_) {
 			removeGhost(m.ghost_data.e);
+			sdlutils().soundEffects().at("pacman_chomp").play();
 		}
 		else {
+			sdlutils().soundEffects().at("pacman_death").play();
 			Message m;
 			m.id = _ROUND_OVER;
 			mngr_->send(m);
-			resetGhosts();
 		}
 		break;
 	default:

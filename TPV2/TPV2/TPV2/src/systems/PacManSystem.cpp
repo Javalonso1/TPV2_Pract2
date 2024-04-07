@@ -108,6 +108,9 @@ void PacManSystem::update() {
 
 void PacManSystem::recieve(const Message& m) {
 	switch (m.id) {
+	case _ROUND_START:
+		sdlutils().soundEffects().at("pacman_intro").play();
+		break;
 	case _ROUND_OVER:
 		if (pmHL_->update_lives(-1) > 0)
 			Game::instance()->setState(Game::NEWROUND);
