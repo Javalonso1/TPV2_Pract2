@@ -10,6 +10,7 @@
 #include "../systems/PacManSystem.h"
 #include "../systems/RenderSystem.h"
 #include "../systems/GhostSystem.h"
+#include "../systems/FoodSystem.h"
 #include "../utils/Vector2D.h"
 #include "../utils/Collisions.h"
 #include "GameOverState.h"
@@ -57,14 +58,16 @@ void Game::init() {
 	renderSys_ = mngr_->addSystem<RenderSystem>();
 	collisionSys_ = mngr_->addSystem<CollisionsSystem>();
 	ghostSys_ = mngr_->addSystem<GhostSystem>(pacmanSys_->getTransform());
+	foodSys_ = mngr_->addSystem<FoodSystem>();
 
 	paused_state_ = new PausedState();
-	runing_state_ = new RunningState(pacmanSys_, renderSys_, collisionSys_, gameCtrlSys_, ghostSys_);
+	runing_state_ = new RunningState(pacmanSys_, renderSys_, collisionSys_, gameCtrlSys_, ghostSys_, foodSys_);
 	newgame_state_ = new NewGameState(pacmanSys_);
 	newround_state_ = new NewRoundState(pacmanSys_);
-	gameover_state_ = new GameOverState();
+	gameover_state_ = new GameOverState(pacmanSys_);
 
 	current_state_ = newgame_state_;
+	pacmanSys_->NewGame();
 }
 
 void Game::start() {

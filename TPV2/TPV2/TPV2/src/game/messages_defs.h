@@ -30,11 +30,11 @@ struct Message {
 		struct {
 			ecs::entity_t e;
 		} ghost_data;
-
-		// _m_CREATE_STARS
+		//_PACMAN_FRUIT_COLLISION
 		struct {
-			unsigned int n;
-		} create_stars_data;
-
+			ecs::entity_t e;
+			bool activada;
+		} fruit_data;
+		
 	};
 };

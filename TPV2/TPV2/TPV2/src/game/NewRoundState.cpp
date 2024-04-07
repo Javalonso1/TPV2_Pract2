@@ -24,9 +24,8 @@ void NewRoundState::leave() {
 
 void NewRoundState::update() {
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_RETURN)) {
-		//Reiniciar todo (nave, frutas, pacman, etc)
-		pac_sys_->reset_pacman();
-		//TO DO
+		//Reiniciar todo (nave, frutas, pacman, etc)		
+		pac_sys_->reset_pacman();		
 
 		Game::instance()->setState(Game::RUNNING);
 	}

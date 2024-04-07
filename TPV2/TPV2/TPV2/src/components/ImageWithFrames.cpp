@@ -37,6 +37,11 @@ void ImageWithFrames::initComponent() {
 	tr_ = mngr_->getComponent<Transform>(ent_);
 	assert(tr_ != nullptr);
 }
+void ImageWithFrames::changeFrame(int a, int b) {
+	srow_ = a;
+	scol_ = b;
+}
+
 
 void ImageWithFrames::render() {
 	if (sdlutils().virtualTimer().currTime() > lastFrameChange_ + 50) {

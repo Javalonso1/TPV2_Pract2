@@ -20,6 +20,7 @@ public:
 	virtual ~ImageWithFrames();
 	void initComponent() override;
 	void render() override;	
+	void changeFrame(int,int);
 
 private:
 	Texture *tex_;

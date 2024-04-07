@@ -10,12 +10,14 @@
 	HEALTH, \
 	IMAGEWITHFRAMES, \
 	STARMOTION, \
+	FRUITCOMPONENT, \
 	POINTS
 
 // Groups list - must have at least one element
 //
 #define _GRPS_LIST_ \
 	STARS,\
+	FRUIT, \
 	GHOST
 
 // Handlers list - must have at least one element
@@ -29,6 +31,7 @@
     STARS, \
 	PACMAN, \
 	GHOST, \
+	FRUIT, \
 	RENDER, \
 	GAMECTRL, \
 	COLLISIONS

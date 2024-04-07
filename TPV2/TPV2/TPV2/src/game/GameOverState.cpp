@@ -7,8 +7,8 @@
 #include "../sdlutils/macros.h"
 #include "../sdlutils/SDLUtils.h"
 #include "Game.h"
-GameOverState::GameOverState() :
-		msg_(nullptr), dest_(), ihdlr(ih()) {
+GameOverState::GameOverState(PacManSystem* pacmanSys) :
+		msg_(nullptr), dest_(), ihdlr(ih()), pacmanSys_(pacmanSys) {
 }
 
 GameOverState::~GameOverState() {
@@ -20,6 +20,7 @@ void GameOverState::leave() {
 void GameOverState::update() {
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_RETURN)) {
 		Game::instance()->setState(Game::NEWGAME);
+		pacmanSys_->NewGame();
 	}
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {

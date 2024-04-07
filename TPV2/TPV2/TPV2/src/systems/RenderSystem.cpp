@@ -26,7 +26,8 @@ void RenderSystem::update() {
 	drawMsgs();
 	//drawStars();
 	drawPacMan();
-	drawGhosts();
+	drawGhosts();	
+	drawFruits();
 }
 /*
 void RenderSystem::drawStars() {
@@ -51,6 +52,11 @@ void RenderSystem::drawGhosts() {
 	for (auto e : mngr_->getEntities(ecs::grp::GHOST)) {		
 		mngr_->getComponent<ImageWithFrames>(e)->render();			
 	}	
+}
+void RenderSystem::drawFruits() {	
+	for (auto e : mngr_->getEntities(ecs::grp::FRUIT)) {		
+		mngr_->getComponent<ImageWithFrames>(e)->render();
+	}
 }
 
 void RenderSystem::drawMsgs() {

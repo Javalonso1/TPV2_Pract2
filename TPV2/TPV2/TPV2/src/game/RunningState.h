@@ -12,10 +12,12 @@ class RenderSystem;
 class GhostSystem;
 class CollisionsSystem;
 class GameCtrlSystem;
+class FoodSystem;
 
 class RunningState: public GameState {
 public:
-	RunningState(PacManSystem *pac_sys, RenderSystem* render_sys, CollisionsSystem* colision_sys, GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys);
+	RunningState(PacManSystem *pac_sys, RenderSystem* render_sys, CollisionsSystem* colision_sys, 
+		GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys);
 	virtual ~RunningState();
 	void leave() override;
 	void update() override;
@@ -33,6 +35,7 @@ private:
 	CollisionsSystem* colision_sys_;
 	GameCtrlSystem* gameCtrl_sys_;	
 	GhostSystem* ghost_sys_;	
+	FoodSystem* food_sys_;
 
 	bool mute_;
 };

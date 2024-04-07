@@ -26,7 +26,7 @@ void GameCtrlSystem::update() {
 
 			Message m;
 			//m.id = _m_CREATE_STARS;
-			m.create_stars_data.n = 5;
+			//m.create_stars_data.n = 5;
 			mngr_->send(m);
 		}
 	}

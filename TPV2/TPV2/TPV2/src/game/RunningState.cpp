@@ -11,20 +11,22 @@
 #include "../systems/CollisionsSystem.h"
 #include "../systems/GameCtrlSystem.h"
 #include "../systems/GhostSystem.h"
+#include "../systems/FoodSystem.h"
 #include "../systems/RenderSystem.h"
 
 
 #include "Game.h"
 
-RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys) :
+RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, 
+	GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys) :
 	ihdlr(ih()), //
 	pac_sys_(pac_sys),
 	render_sys_(render_sys),
 	colision_sys_(col_sys),
 	gameCtrl_sys_(gamectrl_sys),
-	ghost_sys_(ghost_sys)	
-{
-	ghost_sys_->addGhost();
+	ghost_sys_(ghost_sys),
+	food_sys_(food_sys)
+{	
 }
 
 RunningState::~RunningState() {
@@ -52,6 +54,7 @@ void RunningState::update() {
 	// update
 	pac_sys_->update();
 	ghost_sys_->update();
+	food_sys_->update();
 	gameCtrl_sys_->update();
 
 	// check collisions
@@ -62,12 +65,6 @@ void RunningState::update() {
 	render_sys_->update();
 	sdlutils().presentRenderer();
 
-	/*
-	//Ghosts
-	if (sdlutils().virtualTimer().currTime() > lastTimeGeneratedGhost_ + 5000) {
-		//ast_mngr_->create_asteroids(1);
-		lastTimeGeneratedGhost_ = sdlutils().virtualTimer().currTime();
-	}*/
 }
 
 void RunningState::enter() {

@@ -3,6 +3,7 @@
 #include "CollisionsSystem.h"
 
 #include "../components/Transform.h"
+#include "../components/Fruit.h"
 #include "../ecs/Manager.h"
 #include "../utils/Collisions.h"
 
@@ -28,8 +29,32 @@ void CollisionsSystem::update() {
 	// particular case we could use a for-each loop since the list stars is not
 	// modified.
 	//
+	auto& fruit = mngr_->getEntities(ecs::grp::FRUIT);
+	auto n = fruit.size();
+
+	for (auto i = 0u; i < n; i++) {
+		auto e = fruit[i];
+		if (mngr_->isAlive(e)) { // if the fruit is active
+
+			// the fruit's Transform
+			auto fTR = mngr_->getComponent<Transform>(e);
+
+			// check if PacMan collides with the fruit
+			if (Collisions::collides(			//
+				pTR->pos_, pTR->width_, pTR->height_, //
+				fTR->pos_, fTR->width_, fTR->height_)) {
+
+				Message m;
+				m.id = _PACMAN_FOOD_COLLISION;
+				m.fruit_data.e = e;
+				m.fruit_data.activada = mngr_->getComponent<Fruit>(e)->getActivada();
+				mngr_->send(m);
+			}
+		}
+	}
+
 	auto &ghost = mngr_->getEntities(ecs::grp::GHOST);
-	auto n = ghost.size();
+	n = ghost.size();
 
 	for (auto i = 0u; i < n; i++) {
 		auto e = ghost[i];

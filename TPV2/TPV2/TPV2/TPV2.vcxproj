@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\components\Fruit.h" />
+    <ClInclude Include="src\systems\FoodSystem.h" />
     <ClInclude Include="src\game\NewGameState.h" />
     <ClInclude Include="src\systems\GhostSystem.h" />
     <ClInclude Include="src\components\Health.h" />
@@ -69,6 +71,8 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\components\Fruit.cpp" />
+    <ClCompile Include="src\systems\FoodSystem.cpp" />
     <ClCompile Include="src\systems\GhostSystem.cpp" />
     <ClCompile Include="src\components\Health.cpp" />
     <ClCompile Include="src\components\ImageWithFrames.cpp" />

@@ -4,13 +4,14 @@
 #include <SDL_rect.h>
 
 #include "GameState.h"
+#include "..\systems\PacManSystem.h"
 
 class Texture;
 class InputHandler;
 
 class GameOverState: public GameState {
 public:
-	GameOverState();
+	GameOverState(PacManSystem* pacmanSys);
 	virtual ~GameOverState();
 	void leave() override;
 	void update() override;
@@ -21,6 +22,7 @@ private:
 	Texture *msg_;
 	SDL_Rect dest_;
 	InputHandler &ihdlr;
+	PacManSystem* pacmanSys_;
 	bool mute_;
 };
 

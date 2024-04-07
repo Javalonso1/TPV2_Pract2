@@ -26,7 +26,9 @@ void NewGameState::leave() {
 void NewGameState::update() {
 	if (ihdlr.keyDownEvent()) {
 		//REINICIAR VIDAS DE PACOHOMBRE
+
 		Game::instance()->setState(Game::NEWROUND);
+
 	}
 	if (ihdlr.keyDownEvent() && ihdlr.isKeyDown(SDL_SCANCODE_M)) {
 		if (!mute_) {

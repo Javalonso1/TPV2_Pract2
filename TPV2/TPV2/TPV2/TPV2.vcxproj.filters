@@ -177,6 +177,12 @@
     <ClInclude Include="src\game\NewGameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\systems\FoodSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\components\Fruit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\json\JSONValue.cpp">
@@ -249,6 +255,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\systems\GhostSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\systems\FoodSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\components\Fruit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
