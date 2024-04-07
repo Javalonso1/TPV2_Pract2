@@ -13,19 +13,21 @@
 #include "../systems/GhostSystem.h"
 #include "../systems/FoodSystem.h"
 #include "../systems/RenderSystem.h"
+#include "../systems/ImmunitySystem.h"
 
 
 #include "Game.h"
 
 RunningState::RunningState(PacManSystem* pac_sys, RenderSystem* render_sys, CollisionsSystem* col_sys, 
-	GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys) :
+	GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys, ImmunitySystem* immunity_sys) :
 	ihdlr(ih()), //
 	pac_sys_(pac_sys),
 	render_sys_(render_sys),
 	colision_sys_(col_sys),
 	gameCtrl_sys_(gamectrl_sys),
 	ghost_sys_(ghost_sys),
-	food_sys_(food_sys)
+	food_sys_(food_sys),
+	immunitySys_(immunity_sys)
 {	
 }
 
@@ -54,7 +56,8 @@ void RunningState::update() {
 	// update
 	pac_sys_->update();
 	ghost_sys_->update();
-	food_sys_->update();
+	food_sys_->update();	
+	immunitySys_->update();
 	gameCtrl_sys_->update();
 
 	// check collisions

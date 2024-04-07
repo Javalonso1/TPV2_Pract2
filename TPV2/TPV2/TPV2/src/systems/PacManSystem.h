@@ -23,13 +23,10 @@ public:
 
 	Transform* getTransform() { return pmTR_; }
 	int update_lives(int);
-	void reset_lives();
-	void timerInmunity();
+	void reset_lives();	
 	void NewGame();
 private:
 	Transform *pmTR_;	
 	Health* pmHL_;
-	int timeWithInmunity;
-	bool inmune;
 };
 

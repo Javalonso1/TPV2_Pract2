@@ -13,10 +13,9 @@
 
 const float SPEED = -2.5f;
 const int MAX_LIVES = 3;
-const int TIME_INMUNE = 10000;
 
 PacManSystem::PacManSystem() :
-		pmTR_(nullptr), inmune(false) {
+		pmTR_(nullptr) {
 }
 
 PacManSystem::~PacManSystem() {
@@ -104,22 +103,7 @@ void PacManSystem::update() {
 		pmTR_->pos_.setY(sdlutils().height() - pmTR_->height_);
 		pmTR_->vel_.set(0.0f, 0.0f);
 	}
-	if (inmune) {		
-		auto currTime = sdlutils().currRealTime();
-		if (currTime > timeWithInmunity + TIME_INMUNE) {			
-			inmune = false;
-			Message m;
-			m.id = _IMMUNITY_END;
-			mngr_->send(m);
-		}
-	}
 	
-}
-void PacManSystem::timerInmunity() {	
-	if (!inmune) {
-		inmune = true;
-		timeWithInmunity = sdlutils().currRealTime();		
-	}	
 }
 
 void PacManSystem::recieve(const Message& m) {
@@ -129,14 +113,6 @@ void PacManSystem::recieve(const Message& m) {
 			Game::instance()->setState(Game::NEWROUND);
 		else
 			Game::instance()->setState(Game::GAMEOVER);
-		break;
-	case _PACMAN_FOOD_COLLISION:
-		if (m.fruit_data.activada) {
-			Message m2;
-			m2.id = _IMMUNITY_START;
-			mngr_->send(m2);	
-			timerInmunity();
-		}
 		break;
 	default:
 		break;

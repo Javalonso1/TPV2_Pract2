@@ -14,6 +14,7 @@ class CollisionsSystem;
 class GhostSystem;
 class RenderSystem;
 class FoodSystem;
+class ImmunitySystem;
 
 class Game : public Singleton<Game> {
 	friend Singleton<Game>;
@@ -69,6 +70,7 @@ private:
 	CollisionsSystem *collisionSys_;
 	GhostSystem *ghostSys_;
 	FoodSystem* foodSys_;
+	ImmunitySystem* immunitySys_;
 	
 	GameState* current_state_;
 	GameState* paused_state_;

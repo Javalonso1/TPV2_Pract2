@@ -13,11 +13,12 @@ class GhostSystem;
 class CollisionsSystem;
 class GameCtrlSystem;
 class FoodSystem;
+class ImmunitySystem;
 
 class RunningState: public GameState {
 public:
 	RunningState(PacManSystem *pac_sys, RenderSystem* render_sys, CollisionsSystem* colision_sys, 
-		GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys);
+		GameCtrlSystem* gamectrl_sys, GhostSystem* ghost_sys, FoodSystem* food_sys, ImmunitySystem* immunity_sys);
 	virtual ~RunningState();
 	void leave() override;
 	void update() override;
@@ -36,6 +37,7 @@ private:
 	GameCtrlSystem* gameCtrl_sys_;	
 	GhostSystem* ghost_sys_;	
 	FoodSystem* food_sys_;
+	ImmunitySystem* immunitySys_;
 
 	bool mute_;
 };

@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\systems\ImmunitySystem.h" />
     <ClInclude Include="src\components\Fruit.h" />
     <ClInclude Include="src\systems\FoodSystem.h" />
     <ClInclude Include="src\game\NewGameState.h" />
@@ -71,6 +72,7 @@
     <ClInclude Include="src\utils\Vector2D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\systems\ImmunitySystem.cpp" />
     <ClCompile Include="src\components\Fruit.cpp" />
     <ClCompile Include="src\systems\FoodSystem.cpp" />
     <ClCompile Include="src\systems\GhostSystem.cpp" />

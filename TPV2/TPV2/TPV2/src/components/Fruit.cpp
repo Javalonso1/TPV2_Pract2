@@ -12,14 +12,16 @@ const int PROB_EMPEZAR_ACTIVA = 10;
 const int CUANTO_ES_UN_SEGUNDO = 1000;
 
 Fruit::Fruit(ImageWithFrames* im):im_(im) {
-	auto& rand_ = sdlutils().rand();
-	N = rand_.nextInt(MIN_TIEMPO_ESPERA, MAX_TIEMPO_ESPERA);
-	M = rand_.nextInt(MIN_TIEMPO_ACTIVA, MAX_TIEMPO_ACTIVA);
-	int x = rand_.nextInt(0, PROB_EMPEZAR_ACTIVA);
-	if (x == 0) milagroso = true;
-	else milagroso = false;
 	activada = false;
-	timeToChange = sdlutils().currRealTime();
+	auto& rand_ = sdlutils().rand();	
+	int x = rand_.nextInt(0, PROB_EMPEZAR_ACTIVA);
+	if (x == 0) { 
+		milagroso = true; 
+		N = rand_.nextInt(MIN_TIEMPO_ESPERA, MAX_TIEMPO_ESPERA);
+		M = rand_.nextInt(MIN_TIEMPO_ACTIVA, MAX_TIEMPO_ACTIVA);
+		timeToChange = sdlutils().currRealTime();
+	}
+	else milagroso = false;	
 }
 Fruit::~Fruit(){
 }
