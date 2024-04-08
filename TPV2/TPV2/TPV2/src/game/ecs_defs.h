@@ -9,16 +9,14 @@
 	IMAGE, \
 	HEALTH, \
 	IMAGEWITHFRAMES, \
-	STARMOTION, \
 	FRUITCOMPONENT, \
 	POINTS
 
 // Groups list - must have at least one element
 //
 #define _GRPS_LIST_ \
-	STARS,\
-	FRUIT, \
-	GHOST
+	GHOST,\
+	FRUIT
 
 // Handlers list - must have at least one element
 //
@@ -28,12 +26,11 @@
 // Systems list - must have at least one element
 //
 #define _SYS_LIST_ \
-    STARS, \
+    COLLISIONS, \
 	PACMAN, \
 	GHOST, \
 	FRUIT, \
 	RENDER, \
 	IMMUNITY, \
-	GAMECTRL, \
-	COLLISIONS
+	GAMECTRL
 

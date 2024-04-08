@@ -23,10 +23,9 @@ GhostSystem::~GhostSystem() {
 void GhostSystem::initSystem() {
 
 }
-void GhostSystem::resetGhosts() {
-	
+void GhostSystem::resetGhosts() {	
 	auto ghosts = mngr_->getEntities(ecs::grp::GHOST);	
-	for (int i = 0; i < numGhosts; i++) {
+	for (int i = 0; i < ghosts.size(); i++) {
 		removeGhost(ghosts[i]);
 	}
 }
@@ -61,8 +60,7 @@ void GhostSystem::addGhost() {
 		auto x = x_ - s;
 		auto y = y_ - s;
 
-		auto color = rand_.nextInt(4, 9);
-
+		auto color = rand_.nextInt(4, 8);		
 		gTR_->init(Vector2D(x, y), Vector2D(), s, s, 0.0f);
 		auto im = mngr_->addComponent<ImageWithFrames>(ghost, &sdlutils().images().at("pacman"),
 			8, 8,
@@ -82,15 +80,14 @@ void GhostSystem::removeGhost(ecs::entity_t e) {
 	numGhosts--;
 }
 void GhostSystem::changeFrameAllGhosts(int a, int b) {
-	auto ghosts = mngr_->getEntities(ecs::grp::GHOST);
+	auto ghosts = mngr_->getEntities(ecs::grp::GHOST);	
 	for (int i = 0; i < ghosts.size(); i++) {
-		mngr_->getComponent<ImageWithFrames>(ghosts[i])->changeFrame(a, b);
+		if (a == -1) mngr_->getComponent<ImageWithFrames>(ghosts[i])->changeFrame(sdlutils().rand().nextInt(4, 8), b);
+		else mngr_->getComponent<ImageWithFrames>(ghosts[i])->changeFrame(a, b);
 	}
 }
 void GhostSystem::recieve(const Message& m)
 {	
-	auto& rand_ = sdlutils().rand();
-	auto color = rand_.nextInt(4, 9);
 	switch (m.id) {
 	case _ROUND_START:		
 		resetGhosts();
@@ -102,9 +99,9 @@ void GhostSystem::recieve(const Message& m)
 		break;
 	case _IMMUNITY_END:
 		inmunity_ = false;
-		changeFrameAllGhosts(color, 1);
+		changeFrameAllGhosts(-1, 1);
 		break;
-	case _PACMAN_GHOST_COLLISION:
+	case _PACMAN_GHOST_COLLISION:		
 		if (inmunity_) {
 			removeGhost(m.ghost_data.e);
 			sdlutils().soundEffects().at("pacman_chomp").play();

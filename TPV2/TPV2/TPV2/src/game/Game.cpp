@@ -90,20 +90,9 @@ void Game::start() {
 			continue;
 		}
 
-		/*
-		pacmanSys_->update();			
-		gameCtrlSys_->update();
-		collisionSys_->update();
-		*/ 
-
 		current_state_->update();
 
 		mngr_->refresh();
-
-		/*sdlutils().clearRenderer();
-		//renderSys_->update();
-		sdlutils().presentRenderer();*/
-
 		Uint32 frameTime = sdlutils().currRealTime() - startTime;
 
 		if (frameTime < 10)

@@ -28,7 +28,6 @@
     <ClInclude Include="src\components\Image.h" />
     <ClInclude Include="src\components\ImageWithFrames.h" />
     <ClInclude Include="src\components\Points.h" />
-    <ClInclude Include="src\components\StarMotion.h" />
     <ClInclude Include="src\components\Transform.h" />
     <ClInclude Include="src\ecs\Component.h" />
     <ClInclude Include="src\ecs\ecs.h" />

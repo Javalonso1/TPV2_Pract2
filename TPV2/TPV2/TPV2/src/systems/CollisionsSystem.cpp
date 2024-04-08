@@ -68,8 +68,7 @@ void CollisionsSystem::update() {
 			// check if PacMan collides with the ghost
 			if (Collisions::collides(			//
 					pTR->pos_, pTR->width_, pTR->height_, //
-					gTR->pos_, gTR->width_, gTR->height_)) {
-
+					gTR->pos_, gTR->width_, gTR->height_)) {				
 				Message m;
 				m.id = _PACMAN_GHOST_COLLISION;
 				m.ghost_data.e = e;
