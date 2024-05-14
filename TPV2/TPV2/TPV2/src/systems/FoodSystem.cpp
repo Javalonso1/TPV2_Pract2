@@ -28,6 +28,7 @@ void FoodSystem::resetFruit() {
 		removeFruit(fruits[i]);
 	}
 	createFruits();
+	resetFruitTimers();
 }
 void FoodSystem::resetFruitTimers() {
 
@@ -73,7 +74,7 @@ void FoodSystem::recieve(const Message& m)
 	case _NEW_GAME:
 		resetFruit();
 		break;
-	case _ROUND_OVER:
+	case _ROUND_START:
 		resetFruitTimers();
 		break;
 	case _PACMAN_FOOD_COLLISION:
